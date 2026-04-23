@@ -156,7 +156,7 @@
 
   <body>
        <header>
-      <h1>WELCOME TO ANNE'S BAKERY</h1>
+      <h1 style="text-align: center; margin-top: 20px;">WELCOME TO ANNE'S BAKERY</h1>
       <nav class=" top-nav"> 
       <nav >
             <ul>
@@ -190,43 +190,5 @@
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
     </footer>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navLinks = document.querySelectorAll('#nav-links a'); 
-        const sections = document.querySelectorAll('.content-section');
-
-       function showPage(targetId) {
-                sections.forEach(section => {
-                    if (section.id === targetId) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                });
-            }
-
-       
-    navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    const href = this.getAttribute('href');
-                    
-                    
-                    if (href.startsWith('#') && href.length > 1) {
-                        event.preventDefault();
-                        const targetId = href.substring(1);
-                        showPage(targetId);
-                        window.location.hash = targetId;
-                    }
-                });
-            });
-        
-        if (window.location.hash) {
-                showPage(window.location.hash.substring(1));
-            }
-        });
-    
-</script>
-</body>
+  </body>
 </html>
-
- 
