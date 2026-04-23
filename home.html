@@ -1,0 +1,232 @@
+ <html>
+  <head>
+  <title>ANNE'S PASTERY
+  </title>
+  <style>
+     
+      body {
+            background-color: lightgoldenrodyellow; 
+            color: black; 
+            margin: 0;
+        }
+
+        
+        .top-nav {
+            background-color:black; 
+            color: white;
+            padding: 10px 5%; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+            position: sticky; 
+            top: 0;
+            z-index: 1000; 
+        }
+        .top-nav h2 {
+            margin: 0;
+            font-size: 24px;
+            color: white;
+        }
+
+        .top-nav ul {
+            display: flex; 
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-nav ul li {
+            margin-left: 25px; 
+        }
+
+       
+        .top-nav ul li a {
+            text-decoration: none; 
+            color:white; 
+            font-weight: 500;
+            transition: 0.3s; 
+            font-size: 18px;
+        }
+
+       
+        .top-nav ul li a:hover {
+            color: #bdc3c7; 
+           
+        }
+
+       
+        .content {
+            display: none;
+            max-width: 1000px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #1a2a3a;
+        }
+
+      .active {
+            display: block; /* Shown when active */
+        }
+
+        .content-section h1, h2 {
+            color: #1a2a3a;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 8px; 
+            display: block; 
+            margin: 20px auto; 
+        }
+        .home-page {
+            background-color: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            border-left: 6px solid #1a2a3a; 
+        }
+
+        
+        .home-page h1 {
+            font-size: 32px;
+            color: #1a2a3a;
+            margin-bottom: 20px; 
+        }
+
+       
+        .home-page p {
+            line-height: 1.8; 
+            color: #7f8c8d; 
+            margin-bottom: 25px; 
+            font-size: 16px;
+        }
+
+       
+        .home-page img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 8px; 
+            display: block; 
+            margin: 0 auto; 
+            border: 2px solid #ecf0f1; 
+        }
+
+        
+        .home-page .footer-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .home-page .footer-link a {
+            color: #1a2a3a;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px dashed #1a2a3a;
+        }
+         
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+        }
+  </style>
+  </head>
+
+  <body>
+       <header>
+      <h1>WELCOME TO ANNE'S BAKERY</h1>
+      <nav class=" top-nav"> 
+      <nav >
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section active"> 
+           <h1>Welcome to Our Site!</h1>
+            <p>Discover the best pastries in town, made with love and the finest ingredients. From flaky croissants to decadent cakes, we have something for every sweet tooth. Visit us today and treat yourself to a delightful experience!</p>
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdHJ5fGVufDB8fDB8fHww&w=1000&q=80" alt="Delicious Pastries">
+        </section>
+       
+                       
+        </section>
+       
+    </main>
+  <footer >
+      <div >
+         <a href="https://www.google.com" target="_blank">Google</a><br>
+         <a href="https://www.Instagram.com" target="_blank">Instagram</a> <br>
+         <a href="https://www.Whatsapp.com" target="_blank">Whatsapp</a> <br>
+
+    </div>
+        <p>© 2025 Anne's bakery. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('#nav-links a'); 
+        const sections = document.querySelectorAll('.content-section');
+
+       function showPage(targetId) {
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }
+
+       
+    navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    const href = this.getAttribute('href');
+                    
+                    
+                    if (href.startsWith('#') && href.length > 1) {
+                        event.preventDefault();
+                        const targetId = href.substring(1);
+                        showPage(targetId);
+                        window.location.hash = targetId;
+                    }
+                });
+            });
+        
+        if (window.location.hash) {
+                showPage(window.location.hash.substring(1));
+            }
+        });
+    
+</script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,247 @@
+ <html>
+  <head>
+  <title>ANNE'S PASTERY
+  </title>
+    <style>
+         
+        body {
+            background-color: #ecf0f1; 
+            color: black; 
+        }
+
+        
+        .top-nav {
+            background-color:black; 
+            color: white;
+            padding: 10px 5%; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
+            position: sticky; 
+            top: 0;
+            z-index: 1000; 
+        }
+
+        
+        .top-nav h2 {
+            font-size: 30px;
+            color: #1a2a3a; 
+            font-weight: 700;
+        }
+
+        .top-nav ul {
+            display: flex; 
+            list-style: none; 
+        }
+
+        .top-nav ul li {
+            margin-left: 25px; 
+        }
+
+       
+        .top-nav ul li a {
+            text-decoration: none; 
+            color: white; 
+            font-weight: 500;
+            transition: 0.3s; 
+            font-size: 18px;
+        }
+
+       
+        .top-nav ul li a:hover {
+            color: #bdc3c7; 
+
+        }
+
+       
+        .content {
+            max-width: 1000px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+       
+        h2 { color: #1a2a3a; text-align: center; font-size: 32px; }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1a2a3a;
+            color: white;
+        }
+
+        /* MENU IMAGE STYLING */
+        .menu-img {
+            width: 80px;      /* Small size for table */
+            height: 60px;
+            object-fit: cover; /* Keeps image from stretching */
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-img:hover {
+            transform: scale(2.0); /* Zooms in when user hovers */
+            cursor: pointer;
+        }
+
+        .item-qty { width: 50px; padding: 5px; }
+
+        .order-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 20px; color: #7f8c8d; }
+  </style>
+       
+  </head>
+    <body>
+        <header>
+         <nav class=" top-nav"> 
+      <nav >
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+      <main>
+         <section id="menu" aria-label="Pastry Menu">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: left;">
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><img src="croissant.jpg" alt="Croissant" class="menu-img"></td>
+                        <td class="item-name">Croissant</td>
+                        <td>Flaky, buttery pastry perfect for breakfast.</td>
+                        <td>$<span class="item-price">3.00</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td><img src="chocolate-cake.jpg" alt="Chocolate Cake" class="menu-img"></td>
+                        <td class="item-name">Chocolate Cake</td>
+                        <td>Rich and moist chocolate cake with a creamy frosting.</td>
+                        <td>$<span class="item-price">$5.00</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="fruit-tart.jpg" alt="Fruit Tart" class="menu-img"></td>
+                        <td class="item-name">Fruit Tart</td>
+                        <td>A crisp tart filled with custard and topped with fresh fruit.</td>
+                        <td>$<span class="item-price">$4.50</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="macarons.jpg" alt="Macarons" class="menu-img"></td>
+                        <td class="item-name">Macarons</td>
+                        <td>Delicate almond meringue cookies with various fillings.</td>
+                        <td>$<span class="item-price">$2.50</span> each</td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="banana-bread.jpg" alt="Banana Bread" class="menu-img"></td>       
+                        <td class="item-name">Banana Bread</td>
+                        <td>Moist and flavorful banana bread, perfect for any time of day.</td>
+                        <td>$<span class="item-price">$3.50</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="cheesecake.jpg" alt="Cheesecake" class="menu-img"></td>                   
+                        <td class="item-name"  >Cheesecake</td>
+                        <td>Creamy cheesecake with a graham cracker crust.</td>
+                        <td>$<span class="item-price">$4.00</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="blueberry-muffin.jpg" alt="Blueberry Muffin" class="menu-img"></td>
+                        <td class="item-name">Blueberry Muffin</td>
+                        <td>Soft and fluffy muffin bursting with fresh blueberries.</td>
+                        <td>$<span class="item-price">$2.75</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="almond-croissant.jpg" alt="Almond Croissant" class="menu-img"></td>   
+                        <td class="item-name">Almond Croissant</td>
+                        <td>Buttery croissant filled with almond paste and topped with sliced almonds.</td>
+                        <td>$<span class="item-price">$3.50</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="lemon-meringue-pie.jpg" alt="Lemon Meringue Pie" class="menu-img"></td>
+                        <td class="item-name">Lemon Meringue Pie</td>
+                        <td>Tangy lemon filling topped with fluffy meringue.</td>
+                        <td>$<span class="item-price">$4.25</span></td>
+                        <td><input type="number" class="item-qty" min="0" value="0"></td>
+                        <td><button class="order-btn" onclick="placeOrder(this)">Order</button></td>
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+        </section>
+      </main>
+        <footer>
+            <p>&copy; 2024 Anne's Bakery. All rights reserved.</p>  
+        </footer>
+
+        <script>
+        function placeOrder(button) {
+            
+            const row = button.parentElement.parentElement;
+            
+           
+            const name = row.querySelector('.item-name').innerText;
+            const price = parseFloat(row.querySelector('.item-price').innerText);
+            const qty = parseInt(row.querySelector('.item-qty').value);
+            
+            if (qty > 0) {
+                const total = (price * qty).toFixed(2);
+                alert(`Order Confirmed!\n\nItem: ${name}\nQuantity: ${qty}\nTotal Cost: $${total}`);
+            } else {
+                alert("Please enter a quantity of 1 or more.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+    </body>
+</html>
